@@ -2,7 +2,6 @@ package v_satyamounika.myapplication.pojo;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,24 +10,44 @@ import java.util.List;
 
 public class TempList {
 
-    @SerializedName("list")
-    public List list = new ArrayList();
+    @SerializedName("page")
+    private int page;
+    @SerializedName("results")
+    private List<MultipleResource> results;
+    @SerializedName("total_results")
+    private int totalResults;
+    @SerializedName("total_pages")
+    private int totalPages;
 
-    public class List{
-
-        @SerializedName("temp")
-        public List temp = new ArrayList();
+    public int getPage() {
+        return page;
     }
 
-    public class Temp{
+    public void setPage(int page) {
+        this.page = page;
+    }
 
-        @SerializedName("day")
-        public Integer dayTemp;
+    public List<MultipleResource> getResults() {
+        return results;
+    }
 
-        @SerializedName("night")
-        public Integer nightTemp;
+    public void setResults(List<MultipleResource> results) {
+        this.results = results;
+    }
 
-        @SerializedName("eve")
-        public Integer eveTemp;
+    public int getTotalResults() {
+        return totalResults;
+    }
+
+    public void setTotalResults(int totalResults) {
+        this.totalResults = totalResults;
+    }
+
+    public int getTotalPages() {
+        return totalPages;
+    }
+
+    public void setTotalPages(int totalPages) {
+        this.totalPages = totalPages;
     }
 }
