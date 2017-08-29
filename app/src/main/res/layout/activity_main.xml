@@ -55,5 +55,14 @@
         android:layout_marginTop="36dp"
         android:ems="10"
         android:inputType="number"
-        android:text="Zipcode" />
+        android:hint="Zipcode" />
+
+    <Button
+        android:id="@+id/button_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="81dp"
+        android:text="Find by location"
+        android:layout_below="@+id/button_max"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
