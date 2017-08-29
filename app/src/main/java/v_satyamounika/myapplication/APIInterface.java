@@ -2,8 +2,8 @@ package v_satyamounika.myapplication;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
-import v_satyamounika.myapplication.pojo.MultipleResource;
 import v_satyamounika.myapplication.pojo.TempList;
 
 /**
@@ -12,10 +12,11 @@ import v_satyamounika.myapplication.pojo.TempList;
 
 interface APIInterface {
 
-    @GET("/api.openweathermap.org/data/2.5/forecast/daily?")
-    Call<MultipleResource> doGetListResources();
+    @GET("movie/top_rated")
+    Call<TempList> getTopRatedMovies(@Query("api_key") String apiKey);
 
-    @GET("/api.openweathermap.org/data/2.5/forecast/daily?")
-    Call<TempList> doGetUserList(@Query("zip") Integer zip);
+    @GET("movie/{id}")
+    Call<TempList> getMovieDetails(@Path("id") int id, @Query("api_key") String apiKey);
+
 
 }
