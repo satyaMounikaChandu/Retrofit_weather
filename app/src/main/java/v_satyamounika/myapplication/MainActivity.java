@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                zip = Zip.getText().toString();
+                //zip = Zip.getText().toString();
                 Call<TempList> call = apiInterface.getTopRatedMovies(API_KEY);
                 call.enqueue(new Callback<TempList>() {
                     @Override
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                zip = Zip.getText().toString();
+                //zip = Zip.getText().toString();
                 Call<TempList> call = apiInterface.getTopRatedMovies(API_KEY);
                 call.enqueue(new Callback<TempList>() {
                     @Override
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                zip = Zip.getText().toString();
+                //zip = Zip.getText().toString();
                 Call<TempList> call = apiInterface.getTopRatedMovies(API_KEY);
                 call.enqueue(new Callback<TempList>() {
                     @Override
