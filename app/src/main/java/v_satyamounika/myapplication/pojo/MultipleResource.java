@@ -22,7 +22,7 @@ public class MultipleResource {
     private Integer cnt;
     @SerializedName("list")
     @Expose
-    private List list = null;
+    private java.util.List<List> list;
 
 
     public City getCity() {
@@ -57,11 +57,11 @@ public class MultipleResource {
         this.cnt = cnt;
     }
 
-    public List getList() {
+    public java.util.List<List> getList() {
         return list;
     }
 
-    public void setList(List list) {
+    public void setList(java.util.List<List> list) {
         this.list = list;
     }
 

@@ -11,6 +11,7 @@ import android.widget.Toast;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import v_satyamounika.myapplication.pojo.MultipleResource;
 import v_satyamounika.myapplication.pojo.Temp;
 
 public class MainActivity extends AppCompatActivity {
@@ -42,19 +43,20 @@ public class MainActivity extends AppCompatActivity {
 
         apiInterface = APIClient.getClient().create(APIInterface.class);
 
-
+        zip = "60607";
         Present.setOnClickListener(new View.OnClickListener() {
                                        @Override
                                        public void onClick(View view) {
 
                                            zip = Zip.getText().toString();
-                                           Call<Temp> call = apiInterface.getDetails(zip, API_KEY);
-                                           call.enqueue(new Callback<Temp>() {
+                                           Call<MultipleResource> call = apiInterface.getDetails(zip, API_KEY);
+                                           call.enqueue(new Callback<MultipleResource>() {
                                                @Override
-                                               public void onResponse(Call<Temp> call, Response<Temp> response) {
-                                                   Temp temperature = response.body();
+                                               public void onResponse(Call<MultipleResource> call, Response<MultipleResource> response) {
+                                                   Temp temperature = response.body().getList().get(0).getTemp();
                                                    Temp.setText(temperature.getDay().toString());
                                                }
+                                               //temperature.getList().getTemp().getDay().toString());
 
                                                @Override
                                                public void onFailure(Call call, Throwable t) {
@@ -70,18 +72,18 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 zip = Zip.getText().toString();
-                Call<Temp> call = apiInterface.getDetails(zip, API_KEY);
-                call.enqueue(new Callback<Temp>() {
+                Call<MultipleResource> call = apiInterface.getDetails(zip, API_KEY);
+                call.enqueue(new Callback<MultipleResource>() {
                     @Override
-                    public void onResponse(Call<Temp> call, Response<Temp> response) {
-                        Temp temperature = response.body();
+                    public void onResponse(Call<MultipleResource> call, Response<MultipleResource> response) {
+                        Temp temperature = response.body().getList().get(0).getTemp();
                         Temp.setText(temperature.getMax().toString());
                     }
+                    //temperature.getList().getTemp().getDay().toString());
 
                     @Override
                     public void onFailure(Call call, Throwable t) {
                         call.cancel();
-
                     }
                 });
 
@@ -93,18 +95,18 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 zip = Zip.getText().toString();
-                Call<Temp> call = apiInterface.getDetails(zip, API_KEY);
-                call.enqueue(new Callback<Temp>() {
+                Call<MultipleResource> call = apiInterface.getDetails(zip, API_KEY);
+                call.enqueue(new Callback<MultipleResource>() {
                     @Override
-                    public void onResponse(Call<Temp> call, Response<Temp> response) {
-                        Temp temperature = response.body();
+                    public void onResponse(Call<MultipleResource> call, Response<MultipleResource> response) {
+                        Temp temperature = response.body().getList().get(0).getTemp();
                         Temp.setText(temperature.getMin().toString());
                     }
+                    //temperature.getList().getTemp().getDay().toString());
 
                     @Override
                     public void onFailure(Call call, Throwable t) {
                         call.cancel();
-
                     }
                 });
             }

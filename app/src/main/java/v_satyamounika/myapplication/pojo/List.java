@@ -37,6 +37,7 @@ public class List {
     @Expose
     private Double rain;
 
+
     public Integer getDt() {
         return dt;
     }
