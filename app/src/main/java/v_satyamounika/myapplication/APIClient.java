@@ -1,7 +1,7 @@
 package v_satyamounika.myapplication;
 
 import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.converter.moshi.MoshiConverterFactory;
 
 /**
  * Created by v-satya.chandu on 8/25/2017.
@@ -17,7 +17,7 @@ class APIClient {
         if (retrofit==null) {
             retrofit = new Retrofit.Builder()
                     .baseUrl(BASE_URL)
-                    .addConverterFactory(GsonConverterFactory.create())
+                    .addConverterFactory(MoshiConverterFactory.create())
                     .build();
         }
         return retrofit;
