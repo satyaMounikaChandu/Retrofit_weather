@@ -1,6 +1,6 @@
 package v_satyamounika.myapplication.pojo;
 
-import com.google.gson.annotations.SerializedName;
+import com.squareup.moshi.Json;
 
 import java.util.List;
 
@@ -10,44 +10,145 @@ import java.util.List;
 
 public class TempList {
 
-    @SerializedName("page")
-    private int page;
-    @SerializedName("results")
-    private List<MultipleResource> results;
-    @SerializedName("total_results")
-    private int totalResults;
-    @SerializedName("total_pages")
-    private int totalPages;
+    @Json(name = "vote_count")
+    private Integer voteCount;
+    @Json(name = "id")
+    private Integer id;
+    @Json(name = "video")
+    private Boolean video;
+    @Json(name = "vote_average")
+    private Double voteAverage;
+    @Json(name = "title")
+    private String title;
+    @Json(name = "popularity")
+    private Double popularity;
+    @Json(name = "poster_path")
+    private String posterPath;
+    @Json(name = "original_language")
+    private String originalLanguage;
+    @Json(name = "original_title")
+    private String originalTitle;
+    @Json(name = "genre_ids")
+    private List<Integer> genreIds = null;
+    @Json(name = "backdrop_path")
+    private String backdropPath;
+    @Json(name = "adult")
+    private Boolean adult;
+    @Json(name = "overview")
+    private String overview;
+    @Json(name = "release_date")
+    private String releaseDate;
 
-    public int getPage() {
-        return page;
+    public Integer getVoteCount() {
+        return voteCount;
     }
 
-    public void setPage(int page) {
-        this.page = page;
+    public void setVoteCount(Integer voteCount) {
+        this.voteCount = voteCount;
     }
 
-    public List<MultipleResource> getResults() {
-        return results;
+    public Integer getId() {
+        return id;
     }
 
-    public void setResults(List<MultipleResource> results) {
-        this.results = results;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public int getTotalResults() {
-        return totalResults;
+    public Boolean getVideo() {
+        return video;
     }
 
-    public void setTotalResults(int totalResults) {
-        this.totalResults = totalResults;
+    public void setVideo(Boolean video) {
+        this.video = video;
     }
 
-    public int getTotalPages() {
-        return totalPages;
+    public Double getVoteAverage() {
+        return voteAverage;
     }
 
-    public void setTotalPages(int totalPages) {
-        this.totalPages = totalPages;
+    public void setVoteAverage(Double voteAverage) {
+        this.voteAverage = voteAverage;
     }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public Double getPopularity() {
+        return popularity;
+    }
+
+    public void setPopularity(Double popularity) {
+        this.popularity = popularity;
+    }
+
+    public String getPosterPath() {
+        return posterPath;
+    }
+
+    public void setPosterPath(String posterPath) {
+        this.posterPath = posterPath;
+    }
+
+    public String getOriginalLanguage() {
+        return originalLanguage;
+    }
+
+    public void setOriginalLanguage(String originalLanguage) {
+        this.originalLanguage = originalLanguage;
+    }
+
+    public String getOriginalTitle() {
+        return originalTitle;
+    }
+
+    public void setOriginalTitle(String originalTitle) {
+        this.originalTitle = originalTitle;
+    }
+
+    public List<Integer> getGenreIds() {
+        return genreIds;
+    }
+
+    public void setGenreIds(List<Integer> genreIds) {
+        this.genreIds = genreIds;
+    }
+
+    public String getBackdropPath() {
+        return backdropPath;
+    }
+
+    public void setBackdropPath(String backdropPath) {
+        this.backdropPath = backdropPath;
+    }
+
+    public Boolean getAdult() {
+        return adult;
+    }
+
+    public void setAdult(Boolean adult) {
+        this.adult = adult;
+    }
+
+    public String getOverview() {
+        return overview;
+    }
+
+    public void setOverview(String overview) {
+        this.overview = overview;
+    }
+
+    public String getReleaseDate() {
+        return releaseDate;
+    }
+
+    public void setReleaseDate(String releaseDate) {
+        this.releaseDate = releaseDate;
+    }
+
 }

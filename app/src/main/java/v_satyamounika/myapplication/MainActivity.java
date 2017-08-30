@@ -51,11 +51,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 //zip = Zip.getText().toString();
-                Call<TempList> call = apiInterface.getTopRatedMovies(API_KEY);
-                call.enqueue(new Callback<TempList>() {
+                Call<MultipleResource> call = apiInterface.getTopRatedMovies(API_KEY);
+                call.enqueue(new Callback<MultipleResource>() {
                     @Override
-                    public void onResponse(Call<TempList> call, Response<TempList> response) {
-                        List<MultipleResource> movies = response.body().getResults();
+                    public void onResponse(Call<MultipleResource> call, Response<MultipleResource> response) {
+                        List<TempList> movies = response.body().getResults();
                         Temp.setText(movies.get(0).getTitle().toString());
                     }
 
@@ -73,11 +73,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 //zip = Zip.getText().toString();
-                Call<TempList> call = apiInterface.getTopRatedMovies(API_KEY);
-                call.enqueue(new Callback<TempList>() {
+                Call<MultipleResource> call = apiInterface.getTopRatedMovies(API_KEY);
+                call.enqueue(new Callback<MultipleResource>() {
                     @Override
-                    public void onResponse(Call<TempList> call, Response<TempList> response) {
-                        List<MultipleResource> movies = response.body().getResults();
+                    public void onResponse(Call<MultipleResource> call, Response<MultipleResource> response) {
+                        List<TempList> movies = response.body().getResults();
                         Temp.setText(movies.get(1).getTitle().toString());
                     }
 
@@ -96,11 +96,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 //zip = Zip.getText().toString();
-                Call<TempList> call = apiInterface.getTopRatedMovies(API_KEY);
-                call.enqueue(new Callback<TempList>() {
+                Call<MultipleResource> call = apiInterface.getTopRatedMovies(API_KEY);
+                call.enqueue(new Callback<MultipleResource>() {
                     @Override
-                    public void onResponse(Call<TempList> call, Response<TempList> response) {
-                        List<MultipleResource> movies = response.body().getResults();
+                    public void onResponse(Call<MultipleResource> call, Response<MultipleResource> response) {
+                        List<TempList> movies = response.body().getResults();
                         Temp.setText(movies.get(2).getTitle().toString());
                     }
 

@@ -4,7 +4,7 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
-import v_satyamounika.myapplication.pojo.TempList;
+import v_satyamounika.myapplication.pojo.MultipleResource;
 
 /**
  * Created by v-satya.chandu on 8/25/2017.
@@ -13,10 +13,10 @@ import v_satyamounika.myapplication.pojo.TempList;
 interface APIInterface {
 
     @GET("movie/top_rated")
-    Call<TempList> getTopRatedMovies(@Query("api_key") String apiKey);
+    Call<MultipleResource> getTopRatedMovies(@Query("api_key") String apiKey);
 
     @GET("movie/{id}")
-    Call<TempList> getMovieDetails(@Path("id") int id, @Query("api_key") String apiKey);
+    Call<MultipleResource> getMovieDetails(@Path("id") int id, @Query("api_key") String apiKey);
 
 
 }
